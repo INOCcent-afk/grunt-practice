@@ -1,0 +1,141 @@
+header { 
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+
+
+    .logo { 
+        font-size: 14px;
+        letter-spacing: 5px;
+        a { 
+                text-decoration: none;
+                color: #000;
+        }
+    }
+
+    .menu { 
+        width: 25px;
+        height: 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .burger { 
+            width: 100%;
+            height: 2px;
+            background: #ccc;
+            transition: all 0.2s ease;
+        }
+
+        &:hover .burger{ 
+            background: #000;
+        }
+    }
+    .desktop-links { 
+        display: none;
+    }
+}
+
+.hidden-nav { 
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background:#fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+    z-index: 10;
+     
+    .close-btn { 
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+    
+    
+    
+        .hand { 
+            width: 100%;
+            height: 3px;
+            background:  #ccc;
+            border-radius: 5px;
+            transform: rotate(-45deg);
+            transition: all 0.5s ease;
+        
+        }
+        .hand:nth-child(2) { 
+            transform: rotate(45deg);
+        }
+
+        &:hover .hand { 
+            background: #000;
+        }
+
+    }
+
+    ul { 
+        text-align: center;
+        li { 
+            list-style: none;
+            padding: 10px 0;
+            a { 
+                color: #333;
+                text-decoration: none;
+                font-size: 30px;
+                transition: all 0.5s ease;
+                &:hover  { 
+                    color: #ccc;
+                }
+            }
+        }
+    }
+}
+.active { 
+    color: red;
+}
+
+@media (min-width:1000px) { 
+    .hidden-nav { 
+        display: none;
+    }
+    header { 
+        .menu { 
+            display: none;
+        }
+        .desktop-links { 
+            display: block;
+
+            ul { 
+                display: flex;
+                list-style: none;
+                gap: 15px;
+                li { 
+                    a { 
+                        font-size: 10px;
+                        color: rgb(173, 173, 173);
+                        text-decoration: none;
+                        letter-spacing: 2px;
+
+                        &:hover { 
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.nav-show {
+    opacity: 1;
+    pointer-events: all;
+}

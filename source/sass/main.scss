@@ -1,0 +1,29 @@
+@import "header";
+@import "hero";
+@import "showcase";
+@import "footer";
+@import "cards";
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+body { 
+    font-family: sans-serif;
+}
+.img-banner { 
+    width: 100%;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img { 
+        width: 100%;
+        max-width: 800px;
+    }
+}
